@@ -1,38 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This code should return the fastest path to return get a file between a network of hosts.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Code is pushed to heroku site https://visible-file-server.herokuapp.com/, you can curl to that website or interact with it locally by pulling down the code.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+==To run locally
 
-++ Tests
-what happens with bad data?
-what happens when hosts are linked multiple ways with different?
+1) Pull down repo, get psql and rails if needed
 
+2) Create database for application and save as ENV['FILE_SERVER_DB']
 
+3) Serve up code and curl to endpoints to create host network and find the shortest path
 
+==Example
 
 curl -X GET http://localhost:3000/hosts
 
@@ -43,3 +24,11 @@ curl -X GET http://localhost:3000/links
 curl -X POST -d "host_1=A&host_2=T&description=ftp" http://localhost:3000/link
 
 curl -X GET http://localhost:3000/path/A/to/H
+
+==Next Steps
+
+++ Tests
+
+what happens with bad data?
+
+what happens when hosts are linked multiple ways with different?
