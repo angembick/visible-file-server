@@ -90,6 +90,8 @@ curl -X GET http://visible-file-server.herokuapp.com/path/A/to/B
 
 ==Next Steps
 
+**Use rails 4 to utilize ActiveModel::Model so that data does not persist**
+
 ++ Tests
 
 what happens with bad data?
