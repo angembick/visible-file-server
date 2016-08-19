@@ -5,11 +5,75 @@ This code should return the fastest path to return get a file between a network 
 The code is pushed to heroku. You can curl to that website, view the get requests in the browzer such as https://visible-file-server.herokuapp.com/hosts, or interact with the code locally by pulling down the repository.
 
 
+==To use the heroku code || API doc
+
+- to add hosts to the database
+
+    POST visible-file-server.herokuapp.com/host
+    ←
+    ``{
+        name: “A”
+    }``
+    →
+    ``{
+        status: "success"
+    }``
+- to get existing hosts
+
+    GET visible-file-server.herokuapp.com/hosts
+
+    →
+    ``{
+        hosts: ["A","B","C","D"]
+    }``
+- to add links
+
+    POST visible-file-server.herokuapp.com/link
+    ←
+    ``{
+        host_1: “A”,
+        host_2: “B”,
+        description: “ftp”
+    }``
+    →
+    ``{
+        status: "success"
+    }``
+- to view existing links
+
+    GET visible-file-server.herokuapp.com/links
+
+    →
+    ``{
+        links:
+          [
+            {"host_1":"A","host_2":"B","description":"src"},
+            {"host_1":"B","host_2":"C","description":"ftp"},
+            {"host_1":"B","host_2":"D","description":"ftp"},
+            {"host_1":"C","host_2":"D","description":"rsync"}
+          ]
+
+    }``
+- to find the shortest path between hosts
+
+    GET visible-file-server.herokuapp.com/path/:A/to/:B
+
+        visible-file-server.herokuapp.com/path/B/to/D
+
+    →
+    ``{
+        links:
+          [
+            {"host_1":"B","host_2":"C","description":"ftp"},
+            {"host_1":"B","host_2":"D","description":"ftp"}
+          ]
+
+    }``
 ==To run locally
 
 1) Pull down repo, get psql and rails if needed
 
-2) Create database for application and save as ENV['FILE_SERVER_DB']
+2) Create database for application and save, this database yml is connected to file_server
 
 3) Serve up code and curl to endpoints to create host network and find the shortest path
 
