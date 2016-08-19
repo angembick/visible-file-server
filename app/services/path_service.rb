@@ -1,7 +1,7 @@
 class PathService
 
   @distance_between_nodes = 1
-  @infinity = 999999999
+  @infinity = 1.0/0
 
   def self.find_shortest_path(from_host_name, to_host_name)
     current_node, destination_node = {}, {}
