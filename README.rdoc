@@ -62,9 +62,8 @@ The code is pushed to heroku. You can curl to that website, view the get request
 
     →
     ``{
-        links:
+        result:
           [
-            {"host_1":"B","host_2":"C","description":"ftp"},
             {"host_1":"B","host_2":"D","description":"ftp"}
           ]
 
