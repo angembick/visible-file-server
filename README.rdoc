@@ -2,7 +2,7 @@
 
 This code should return the fastest path to return get a file between a network of hosts.
 
-Code is pushed to heroku site https://visible-file-server.herokuapp.com/, you can curl to that website or interact with it locally by pulling down the code.
+The code is pushed to heroku. You can curl to that website, view the get requests in the browzer such as https://visible-file-server.herokuapp.com/hosts, or interact with the code locally by pulling down the repository.
 
 
 ==To run locally
@@ -15,15 +15,15 @@ Code is pushed to heroku site https://visible-file-server.herokuapp.com/, you ca
 
 ==Example
 
-curl -X GET http://localhost:3000/hosts
+curl -X GET http://visible-file-server.herokuapp.com/hosts
 
-curl -X POST -d "name=T" http://localhost:3000/host
+curl -X POST -d "name=A" http://visible-file-server.herokuapp.com/host
 
-curl -X GET http://localhost:3000/links
+curl -X GET http://visible-file-server.herokuapp.com/links
 
-curl -X POST -d "host_1=A&host_2=T&description=ftp" http://localhost:3000/link
+curl -X POST -d "host_1=A&host_2=B&description=ftp" http://visible-file-server.herokuapp.com/link
 
-curl -X GET http://localhost:3000/path/A/to/H
+curl -X GET http://visible-file-server.herokuapp.com/path/A/to/B
 
 ==Next Steps
 
